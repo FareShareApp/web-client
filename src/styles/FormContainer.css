@@ -1,0 +1,26 @@
+
+.background-rect {
+    text-align: center;
+    width: 380px;
+    height: 300px;
+    
+ 
+
+    border-radius: 10px;
+    border: 2px solid  #f4f4f4;
+
+
+
+    display: table-cell;
+    vertical-align:  middle;
+    padding: 30px;
+}
+
+.inputs{
+    margin-bottom: 30px;
+}
+
+.form-button{
+    margin-top: 10px;
+    width: 100%;
+}
