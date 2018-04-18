@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 
 
 const FormContainer = (props) => {
+    const {history} = props;
     return(
         <div className = "background-rect" >
 
@@ -13,7 +14,7 @@ const FormContainer = (props) => {
                 <InputField description = {"Password"} placeholder = {""}/>
             </div>
 
-            <div><Button className = "form-button" > Sign In </Button></div>
+            <div><Button className = "form-button" onClick = {() => history.push('/main') } > Sign In </Button></div>
             <div><Button className = "form-button" bsStyle = "primary"> Create account </Button></div>
         </div>
     );
