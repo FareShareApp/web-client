@@ -1,0 +1,14 @@
+
+
+.infoContainer{
+    display: flex;
+
+    background: black;
+
+}
+
+.testing{
+    width: 50vw;
+
+    background: yellow;
+}

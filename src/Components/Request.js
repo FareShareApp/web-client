@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 
 let color;
 
-class Match extends Component{
+class Request extends Component{
     
 
     render(){
@@ -33,4 +33,4 @@ class Match extends Component{
 }
 
 
-export default Match;
+export default Request;

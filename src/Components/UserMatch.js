@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import Match from './Match'
+import Request from './Request'
 import '../styles/UserMatch.css';
 import testData from './test.json';
 
@@ -28,7 +28,7 @@ class UserMatch extends Component{
 
        const dataset = data.map( (option, ind) => 
         
-        <div> <Match destination = {option.destination} index = {ind}/> </div>)
+        <div> <Request destination = {option.destination} index = {ind}/> </div>)
 
 
         return dataset;
