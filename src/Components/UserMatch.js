@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import Request from './Request'
 import '../styles/UserMatch.css';
-import testData from './test.json';
+
 
 
 
@@ -19,22 +19,22 @@ class UserMatch extends Component{
 
 
     componentDidMount(){
-        this.getProduct(); //Fetch data from the sql server
+        this.getRequests(); //Fetch data from the sql server
     };
 
 
 
-    renderProduct(data){ //Renders json data
+    renderRequests(data, onclick){ //Renders json data
 
        const dataset = data.map( (option, ind) => 
         
-        <div> <Request destination = {option.destination} index = {ind}/> </div>)
+        <div> <Request onclick = {() => onclick(option.id)} user_id = {option.id} destination = {option.destination} index = {ind}/> </div>)
 
 
         return dataset;
     }
 
-    getProduct = _ => { //Fetch json from server
+    getRequests = _ => { //Fetch json from server
         fetch('http://localhost:4000').then(response => response.json())
         .then(response => this.setState({products: response}))
         .catch(err => console.error(err));
@@ -42,10 +42,12 @@ class UserMatch extends Component{
 
     
     render(){
+        const {data, onclick} = this.props;
+
         return(
             <div className = "userContainer">
     
-                {this.renderProduct(testData)}
+                {this.renderRequests(data, onclick)}
                
             </div>
     

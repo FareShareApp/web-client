@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Header from "../Components/Header";
-import UserMatch from "../Components/UserMatch";
+import ListContainer from "../Components/ListContainer";
 import '../styles/Main.css';
-import MatchList from "../Components/MatchList";
+
 
 class Main extends Component{
     render(){
@@ -10,10 +10,8 @@ class Main extends Component{
             <div>
                 <Header/>
 
-                <div className = "infoContainer"> 
-                    <UserMatch/>
-                    <MatchList/>
-                </div>
+                <ListContainer />
+
             </div>
         )
 
