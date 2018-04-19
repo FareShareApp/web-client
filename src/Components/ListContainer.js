@@ -9,12 +9,15 @@ import '../styles/Main.css';
 
 class ListContainer extends Component{
     state = {
-        requestID: 1
+        requestID: 1,
     }
 
     handleClick(selectedID){
-        this.setState({requestID: selectedID})
+        this.setState({requestID: selectedID});
     }
+
+
+    
 
     render(){
         return(

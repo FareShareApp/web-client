@@ -13,7 +13,6 @@ class Header extends Component{
 
             <div className = "headerContainer">
                 FareShare
-
                 <h5  onClick = {() => history.push('/')}>
                     Log Out
                 </h5>
