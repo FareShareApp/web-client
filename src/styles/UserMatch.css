@@ -19,12 +19,13 @@
     margin: 10px;
     font-size: 3vh;
 }
+
+.requestContainer:checked{
+    background-color: red;
+}
 .requestContainer:hover{
 	color: black;
-	-webkit-transition: 200ms linear 0s;
-	-moz-transition: 200ms linear 0s;
-	-o-transition: 200ms linear 0s;
-	transition: 200ms linear 0s;
+    border-left: 7px solid black;
     outline: 2px;
     transform: scale(1.01);
     text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
