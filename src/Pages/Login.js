@@ -1,15 +1,34 @@
 import React, { Component } from 'react';
 import '../styles/Login.css';
 import FormContainer from '../Components/FormContainer';
+import Loader from '../Components/Loader';
 
+
+ 
 
 class Login extends Component {
+
+	constructor(props) 
+	{
+		super();
+    	this.state = { isLoading: true }
+	}
+
+	componentDidMount() 
+	{
+    this.setState({isLoading: false})
+	}
+
   render() {
     return (
-      <div className = "loginContainer">
-        <h2> Sign In to FareShare! </h2>
-        <FormContainer {...this.props}  />
-      
+
+    	this.state.isLoading 
+    	? 	
+    	<Loader className='loader'/> 
+    	: 
+      	<div className = "loginContainer">
+        	<h2> Sign In to FareShare! </h2>
+        	<FormContainer {...this.props}  />
       </div>
     );
   }
