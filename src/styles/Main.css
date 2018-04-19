@@ -1,8 +1,10 @@
-
+html * 
+{
+    font-family: 'Open Sans', sans-serif !important;
+}
 
 .infoContainer{
     display: flex;
-
     background: black;
 
 }
