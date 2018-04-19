@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UserMatch from "./UserMatch";
+import RequestList from "./RequestList";
 import MatchList from "./MatchList";
 import testData from './test.json';
 import '../styles/Main.css';
@@ -20,7 +20,7 @@ class ListContainer extends Component{
         return(
             
             <div className = "infoContainer"> 
-                <UserMatch data = {testData} onclick = {this.handleClick.bind(this)} />
+                <RequestList data = {testData} onclick = {this.handleClick.bind(this)} />
                 <MatchList requestID = {this.state.requestID} />
             </div>
 

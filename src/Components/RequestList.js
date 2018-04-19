@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import Request from './Request'
 import '../styles/UserMatch.css';
+import AddButton from './AddButton';
 
 
 
@@ -10,8 +11,7 @@ import '../styles/UserMatch.css';
 
 
 
-
-class UserMatch extends Component{
+class RequestList extends Component{
 
     state = {
         products: [],
@@ -48,6 +48,8 @@ class UserMatch extends Component{
             <div className = "userContainer">
     
                 {this.renderRequests(data, onclick)}
+
+                <AddButton/>
                
             </div>
     
@@ -60,4 +62,4 @@ class UserMatch extends Component{
 
 }
 
-export default UserMatch;
+export default RequestList;

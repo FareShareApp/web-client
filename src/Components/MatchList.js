@@ -2,7 +2,9 @@
 
 import React, {Component} from 'react';
 import '../styles/Main.css';
-import Request from './Request';
+import Match from './Match';
+
+
 import test2 from './test2.json';
 
 
@@ -17,7 +19,7 @@ class MatchList extends Component{
 
        const dataset = data[id-1].map( (option, ind) => 
         
-        <div> <Request destination = {option.destination} index = {ind}/> </div>)
+        <div> <Match destination = {option.destination} index = {ind}/> </div>)
 
 
         return dataset;
@@ -36,10 +38,6 @@ class MatchList extends Component{
         return(
          <div className = "testing">
             {this.renderMatches(test2, requestID)}
-
-            <div onClick = {this.changeIndex.bind(this, 2)}>
-                change data
-            </div>
             
         </div>
 

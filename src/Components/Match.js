@@ -30,7 +30,6 @@ class Request extends Component{
 
             <div className = "requestContainer" 
             onClick = {onclick} >
-                {user_id + " "}
                 {destination}
             </div>
         )

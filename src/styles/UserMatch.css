@@ -1,12 +1,32 @@
 
 
 .userContainer{
-    background: wheat;
+    background: #F2FDFF;
 
     width: 50vw;
     height: 80vh;
 }
 
-.matchContainer{
+.requestContainer{
+    padding: 30px;
+    height: 100px;
+    background: white;
+    color: gray;
+
+    border-radius: 5px;
+    box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.3);
+
+    margin: 10px;
     font-size: 3vh;
+}
+.requestContainer:hover{
+	color: black;
+	-webkit-transition: 200ms linear 0s;
+	-moz-transition: 200ms linear 0s;
+	-o-transition: 200ms linear 0s;
+	transition: 200ms linear 0s;
+    outline: 2px;
+    transform: scale(1.01);
+    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
+
 }
