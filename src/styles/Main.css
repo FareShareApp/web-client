@@ -1,15 +1,16 @@
-
+html * 
+{
+    font-family: 'Open Sans', sans-serif !important;
+}
 
 .infoContainer{
     display: flex;
-
     background: black;
 
 }
 
 .testing{
     width: 50vw;
-
     background: #F2FDFF;
 }
 

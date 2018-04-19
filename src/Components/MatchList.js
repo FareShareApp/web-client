@@ -36,7 +36,7 @@ class MatchList extends Component{
         const {Request, requestID} = this.props;
 
         return(
-         <div className = "testing">
+         <div className = "testing" >
             {this.renderMatches(test2, requestID)}
             
         </div>

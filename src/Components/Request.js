@@ -8,9 +8,8 @@ let color;
 
 class Request extends Component{
 
-
     handleClick(id){
-        console.log(id)
+        console.log(id);
     }
 
     render(){
@@ -26,8 +25,7 @@ class Request extends Component{
 
         return(
 
-            
-
+        
             <div className = "requestContainer" 
             onClick = {onclick} >
                 {user_id + " "}
