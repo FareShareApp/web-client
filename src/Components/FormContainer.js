@@ -14,7 +14,7 @@ const FormContainer = (props) => {
                 <InputField description = {"Password"} placeholder = {""}/>
             </div>
 
-            <div><Button className = "form-button" onClick = {() => history.push('/') } > Sign In </Button></div>
+            <div><Button className = "form-button" onClick = {() => history.push('/main') } > Sign In </Button></div>
             <div><Button className = "form-button" bsStyle = "primary"> Create account </Button></div>
         </div>
     );
