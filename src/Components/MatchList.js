@@ -5,24 +5,19 @@ import '../styles/Main.css';
 import Match from './Match';
 
 
-import test2 from './test2.json';
-
-
-
-
-
 class MatchList extends Component{
 
+    renderMatches(){ //Renders json data
 
-    
-    renderMatches(data, id){ //Renders json data
+        let renderedMatches = this.props.matchData.map((currentMatch, index) => 
+            <div> 
+                <Match destination = {currentMatch.firstName} 
+                       index = {index}/> 
+            </div>
+        )
 
-       const dataset = data[id-1].map( (option, ind) => 
-        
-        <div> <Match destination = {option.destination} index = {ind}/> </div>)
 
-
-        return dataset;
+        return renderedMatches;
     }
 
     changeIndex(index){
@@ -33,12 +28,10 @@ class MatchList extends Component{
 
 
     render(){
-        const {Request, requestID} = this.props;
 
         return(
          <div className = "testing" >
-            {this.renderMatches(test2, requestID)}
-            
+            {this.renderMatches()}
         </div>
 
 

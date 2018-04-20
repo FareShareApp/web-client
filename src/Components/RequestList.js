@@ -5,54 +5,30 @@ import '../styles/UserMatch.css';
 import AddButton from './AddButton';
 
 
-
-
-
-
-
-
 class RequestList extends Component{
 
-    state = {
-        products: [],
+    renderRequests(){ //Renders json data       
+
+        const renderedRequestList = this.props.requestData.map((currentReq, index) => 
+            <div> 
+                <Request onclick = {() => this.props.onclick(index)} 
+                        requestId = { currentReq.requester } 
+                        destination = { currentReq.destination } 
+                        index = { index }/> 
+            </div>
+        )
+
+        return renderedRequestList;
     }
-
-
-    componentDidMount(){
-        this.getRequests(); //Fetch data from the sql server
-    };
-
-
-
-    renderRequests(data, onclick){ //Renders json data
-
-       const dataset = data.map( (option, ind) => 
-        
-        <div> <Request onclick = {() => onclick(option.id)} user_id = {option.id} destination = {option.destination} index = {ind}/> </div>)
-
-
-        return dataset;
-    }
-
-    getRequests = _ => { //Fetch json from server
-        fetch('http://localhost:4000').then(response => response.json())
-        .then(response => this.setState({products: response}))
-        .catch(err => console.error(err));
-    } 
 
     
     render(){
-        const {data, onclick} = this.props;
 
         return(
             <div className = "userContainer">
-    
-                {this.renderRequests(data, onclick)}
-
+                { this.renderRequests() }
                 <AddButton/>
-               
             </div>
-    
         )
 
     }

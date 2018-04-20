@@ -15,21 +15,10 @@ class Request extends Component{
 
     render(){
         const {onclick, user_id, destination, index} = this.props
-        if(index % 2 === 0){
-            console.log(index)
-            color = '#D1DEE9'
-        }
-        else{
-            color = 'white'
-        }
-
 
         return(
-
-            
-
             <div className = "requestContainer" 
-            onClick = {onclick} >
+                onClick = {onclick} >
                 {destination}
             </div>
         )

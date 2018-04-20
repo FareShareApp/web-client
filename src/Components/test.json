@@ -1,7 +1,5 @@
 [{"id":1,"destination":"UIC","time_buffer":"20","body":"some description"},
     {"id":2,"destination":"Trader's Joe","time_buffer":"20","body":"some description"},
     {"id":3,"destination":"Whole Foods","time_buffer":"20","body":"some description"},
-    {"id":4,"destination":"Chicago","time_buffer":"20","body":"some description"}
-
-
+    {"id":4,"destination":"Balls","time_buffer":"20","body":"some description"}
 ]

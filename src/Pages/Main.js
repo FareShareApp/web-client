@@ -5,7 +5,6 @@ import '../styles/Main.css';
 import Loader from '../Components/Loader';
 
 
-
 class Main extends Component{
 
 	constructor(props) 
@@ -16,7 +15,7 @@ class Main extends Component{
 
 	componentDidMount() 
 	{
-    this.setState({isLoading: false})
+		this.setState({isLoading: false})
 	}
 
     render(){
