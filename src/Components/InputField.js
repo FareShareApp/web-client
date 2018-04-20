@@ -4,7 +4,7 @@ const InputField = (props) => {
     return(
       <div>
           <div float> {props.description} </div>
-          <input placeholder = {props.placeholder} class="form-control"/>
+          <input placeholder = {props.placeholder} class="form-control" type={props.type}/>
       </div>
     );
   };
