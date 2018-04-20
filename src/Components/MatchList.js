@@ -19,8 +19,8 @@ class MatchList extends Component{
 
        const dataset = data[id-1].map( (option, ind) => 
         
-        <div> <Match first = {option.First} last = {option.Last}
-         email = {option.Email} pic = {option.Pic}/> </div>)
+        <div> <Match first = {option.firstName} last = {option.lastName}
+         email = {option.email} pic = {option.profileUrl}/> </div>)
 
 
         return dataset;
