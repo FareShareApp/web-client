@@ -4,7 +4,7 @@ import MatchList from "./MatchList";
 import testData from './test.json';
 import '../styles/Main.css';
 
-import { getMatchesForUser, getUserMatchesForRequest } from '../Utilities/api';
+import { getRequestsForUser, getUserMatchesForRequest } from '../Utilities/api';
 
 class ListContainer extends Component{
     
@@ -31,12 +31,7 @@ class ListContainer extends Component{
 
     componentDidMount(){
 
-        getUserMatchesForRequest("5ad943cec320240853b6be01")
-            .then(rideMatches => {
-                console.log(rideMatches);
-            })
-
-        getMatchesForUser()
+        getRequestsForUser()
             .then(result => {
                 this.setState({
                     requestData: result.data

@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import Request from './Request'
 import '../styles/UserMatch.css';
-import AddButton from './AddButton';
+
 
 
 class RequestList extends Component{
@@ -26,8 +26,7 @@ class RequestList extends Component{
 
         return(
             <div className = "userContainer">
-                { this.renderRequests() }
-                <AddButton/>
+                {this.renderRequests()}
             </div>
         )
 

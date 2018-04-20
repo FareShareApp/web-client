@@ -11,8 +11,11 @@ class MatchList extends Component{
 
         let renderedMatches = this.props.matchData.map((currentMatch, index) => 
             <div> 
-                <Match destination = {currentMatch.firstName} 
-                       index = {index}/> 
+                <Match 
+                       first = { currentMatch.firstName }
+                       last = { currentMatch.lastName }
+                       email = { currentMatch.email }
+                       pic = { currentMatch.profileUrl }/> 
             </div>
         )
 
