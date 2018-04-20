@@ -44,3 +44,26 @@ html *
     text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
 
 }
+
+
+/* For Modal */
+.Overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+
+}
+
+.modalLeave{
+    font-size: 1.5vw;
+}
+
+.modalTitle{
+    text-align: center;
+    font-size: 2vw;
+    margin-bottom: 5%;
+}
+

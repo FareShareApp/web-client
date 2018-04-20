@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import Request from './Request'
 import '../styles/UserMatch.css';
-import AddButton from './AddButton';
+
 
 
 
@@ -49,7 +49,7 @@ class RequestList extends Component{
     
                 {this.renderRequests(data, onclick)}
 
-                <AddButton/>
+
                
             </div>
     
