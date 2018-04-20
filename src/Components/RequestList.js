@@ -12,9 +12,9 @@ class RequestList extends Component{
         const renderedRequestList = this.props.requestData.map((currentReq, index) => 
             <div> 
                 <Request onclick = {() => this.props.onclick(index)} 
-                        requestId = { currentReq.requester } 
                         destination = { currentReq.destination } 
-                        index = { index }/> 
+                        desiredTime = { currentReq.desiredTime }
+                        timeBuffer = { currentReq.timeBuffer }/> 
             </div>
         )
 
