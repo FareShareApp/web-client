@@ -8,7 +8,9 @@
 }
 
 .requestContainer{
-    padding: 30px;
+
+    display: flex;
+
     height: 100px;
     background: white;
     color: gray;
@@ -30,4 +32,23 @@
     transform: scale(1.01);
     text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
 
+}
+
+.avatarContainer{
+
+    width: 10%;
+
+    height: 100%;
+
+    margin-top: 3%;
+    margin-left: 3%;
+
+    text-align: center;
+
+}
+
+.matchInfoContainer{
+    font-size: 80%;
+
+    margin-top: 2%;
 }
