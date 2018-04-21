@@ -14,7 +14,9 @@ class Header extends Component{
             <div className = "headerContainer">
                 
                 <div className = "headerInfoContainer">
-                    {"✉ " + userEmail}
+                    <div>
+                        {"Welcome, " + userEmail + "!"}
+                    </div>
                 </div>
 
                 <div> 

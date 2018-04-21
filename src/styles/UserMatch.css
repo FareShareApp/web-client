@@ -19,7 +19,7 @@
     box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.3);
 
     margin: 10px;
-    font-size: 3vh;
+    font-size: 158%;
 }
 
 .selectedRC{
@@ -34,7 +34,7 @@
     box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.3);
 
     margin: 10px;
-    font-size: 3vh;
+    font-size: 158%;
 }
 
 .requestContainer:checked{
@@ -56,14 +56,14 @@
     height: 100%;
 
     margin-top: 3%;
-    margin-left: 3%;
+    margin-left: 1%;
 
     text-align: center;
 
 }
 
 .matchInfoContainer{
-    font-size: 80%;
+    font-size: 100%;;
 
     margin-top: 2%;
 }

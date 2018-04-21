@@ -33,13 +33,15 @@ class Main extends Component{
 		super();
         this.state = { isLoading: true ,
 
-            Username: "",
-            modalIsOpen: false
+            modalIsOpen: false,
+            DisplayName: "",
+            userID: "",
         
         }
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.changeUserName = this.changeUserName.bind(this);
     }
     
     openModal() {
@@ -54,12 +56,16 @@ class Main extends Component{
 	componentDidMount() 
 	{
         this.setState({isLoading: false})
-	}
+    }
+    
+    changeUserName(name, userID){
+        this.setState({DisplayName: name});
+        this.setState({userID: userID});
+    }
 
     render(){
         const {location} = this.props;
 
-        console.log(location.state.Username);
 
         return (
 
@@ -76,11 +82,11 @@ class Main extends Component{
                 contentLabel="Request Modal"
                 overlayClassName= "Overlay"
             >
-                <RequestModal onclick = {this.closeModal}/>
+                <RequestModal onclick = {this.closeModal} userID = {this.state.userID}/>
             </Modal>
 
-            <Header userEmail = {location.state.Username} {...this.props}/>
-            <ListContainer />
+            <Header userEmail = {this.state.DisplayName} {...this.props}/>
+            <ListContainer change = {this.changeUserName} userEmail = {location.state.Username} />
 
             <AddButton onclick = {this.openModal}/>
         </div>

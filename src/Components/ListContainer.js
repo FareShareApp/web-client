@@ -4,7 +4,7 @@ import MatchList from "./MatchList";
 import testData from './test.json';
 import '../styles/Main.css';
 
-import { getRequestsForUser, getUserMatchesForRequest } from '../Utilities/api';
+import { getRequestsForUser, getUserMatchesForRequest, getUserForUsername, getRequestsForUserId, createRequestForUser } from '../Utilities/api';
 
 class ListContainer extends Component{
     
@@ -12,14 +12,16 @@ class ListContainer extends Component{
         requestID: 1,
         requestData: [],
         matchData: [],
-        selectedRequest: -1,
+        selectedRequest: -1,        
+        first: "",
+        last: "",
+        userId: "",
+        userProfileImage: "",
     }
 
     handleClick(index){
         this.setState({requestID: index});
         this.setState({selectedRequest: index});
-
-        
                 
         let selectedRequestId = this.state.requestData[index]._id;
         //console.log("MATCHES FOR RIDE ID:" + selectedRequestId);
@@ -35,12 +37,26 @@ class ListContainer extends Component{
 
     componentDidMount(){
 
-        getRequestsForUser()
-            .then(result => {
+        getUserForUsername(this.props.userEmail)
+            .then(userInformation => {
+                console.log(userInformation);
                 this.setState({
-                    requestData: result.data
-                })
-            });
+                    first: userInformation.data.firstName,
+                    last: userInformation.data.lastName,
+                    userId: userInformation.data._id,
+                    userProfileImage: userInformation.data.profileUrl
+                });
+
+                console.log(this.state.first)
+                this.props.change(this.state.first, this.state.userId)
+                getRequestsForUserId(this.state.userId)
+                    .then(requests => {
+                        this.setState({
+                            requestData: requests.data
+                        })
+                    })
+            })
+
     }
 
     render(){
