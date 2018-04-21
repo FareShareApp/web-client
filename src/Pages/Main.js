@@ -16,7 +16,8 @@ const customStyles = {
 
       backgroundColor: 'rgba(255,255,255,1)',
 
-      top                   : '50%',
+      overflow: "visible",
+      top                   : '40%',
       left                  : '50%',
       right                 : 'auto',
       bottom                : 'auto',

@@ -67,3 +67,11 @@ html *
     margin-bottom: 5%;
 }
 
+.timeRequest{
+    padding-left: 5vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
