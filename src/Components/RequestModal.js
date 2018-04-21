@@ -84,6 +84,7 @@ class RequestModal extends Component{
             this.state.time_buffer 
         )
 
+        this.setState({destination: "", time_buffer: "", time: ""})
         this.props.onclick()
         window.location.reload();
     }

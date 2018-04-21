@@ -17,7 +17,15 @@ class RequestList extends Component{
         }
     }
 
-    renderRequests(){ //Renders json data       
+    renderRequests(){ //Renders json data      
+        
+        if(this.props.requestData.length === 0 ){
+            return(
+                <div className = "emptyRequest" >
+                    Request a Share!
+                </div>
+            )
+        }
 
         const renderedRequestList = this.props.requestData.map((currentReq, index) => 
             <div> 

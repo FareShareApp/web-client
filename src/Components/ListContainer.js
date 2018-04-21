@@ -68,6 +68,7 @@ class ListContainer extends Component{
                              onclick = { this.handleClick.bind(this) } 
                              selected = {this.state.selectedRequest}
                              userName = {this.props.userName}
+                             {...this.props}
                              />
                 <MatchList 
                     selectedRequest = {this.state.selectedRequestData}
