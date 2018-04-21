@@ -4,6 +4,7 @@ import '../styles/FormContainer.css';
 import { Button } from 'react-bootstrap';
 
 
+
 class FormContainer extends Component {
     constructor(props) {
         super(props); //access props
@@ -30,19 +31,21 @@ class FormContainer extends Component {
         const {history} =  this.props;
         return(
             <div className = "background-rect" >
-
+                <h1>Log In</h1>
                 <div className = "inputs">
-                    <InputField 
+                    <InputField
+                        className= "input-login"
                         Name = {"Username"}
                         Value={this.state.Username}
                         onchange={this.handleInputChange}
-                        description = {"Username"}
-                        placeholder = {"ex) user@gmail.com"} 
+                        description = {""}
+                        placeholder = {"Northwestern Email"} 
                         type={"text"}
                     />
                     <InputField
-                         description = {"Password"}
-                         placeholder = {""}
+                         className= "input-login"
+                         description = {""}
+                         placeholder = {"Password"}
                          type={"password"}/>
                 </div>
 

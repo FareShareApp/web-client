@@ -2,26 +2,53 @@
 .background-rect {
 
     text-align: center;
-    width: 380px;
-    height: 300px;
-    
- 
-
-    border-radius: 10px;
-    border: 2px solid  #f4f4f4;
-
-
-
+    width: 50vw;
+    height: 100vw;
+    margin-left: 50vw;
     display: table-cell;
-    vertical-align:  middle;
     padding: 30px;
+    background-color: white;
+    padding-top: 40%;
+    padding-bottom: 50%;
+/*    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+*/}
+
+.input-login {
+    width: 100%;
 }
+
+
 
 .inputs{
     margin-bottom: 30px;
+    text-align: left;
+    text-decoration-color: black;
 }
 
 .form-button{
     margin-top: 10px;
     width: 100%;
+    text-align: left;
+        text-decoration-color: black;
+        outline: none;
+
+
+}
+
+.input-field {
+    background-color: black !important;
+}
+
+
+.btn-primary {
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%) !important;
+    border: none;
+    outline: none;
+
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #ddc4ed 0%, #4b53cc 100%) !important;
+    
+
 }

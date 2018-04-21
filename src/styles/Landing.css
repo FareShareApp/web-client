@@ -1,14 +1,25 @@
-html {
+body, html {
 	height: 100%;
     margin: 0;
 	background-image: url("https://images.unsplash.com/uploads/1413259835094dcdeb9d3/6e609595?ixlib=rb-0.3.5&s=6e10b98782f25fb337a3c1cb2e88a7c7&auto=format&fit=crop&w=2704&q=80");
    	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+/*    min-height: 100%;
+*/}
+
+
+.landing-page {
+	height: 100vw;
 }
 
 .container {
 	margin-left: none;
+}
+
+.landing-title {
+	padding-bottom: 60%;
+	font-weight: bold;
 }
 
 
@@ -21,7 +32,23 @@ html {
 }*/
 
 .landing-jumbo {
-	padding-top: 25%;
+	padding-top: 0;
+	margin-top: 10px;
 	background-color: inherit;
 	color: white;
+	max-width: 50vw;
+	float: left;
+	margin-left: 4vw;
 }
+
+.loginContainer{
+  display: block;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 70vw;
+  height: 100%;
+
+}
+
+
+
