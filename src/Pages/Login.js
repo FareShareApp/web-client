@@ -26,7 +26,7 @@ class Login extends Component {
     	? 	
     	<Loader className='loader'/> 
     	: 
-      <div className = "loginContainer">
+      	<div className = "loginContainer">
         	<h2> Sign In to FareShare! </h2>
         	<FormContainer {...this.props}  />
       </div>
