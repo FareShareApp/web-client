@@ -83,6 +83,9 @@ class RequestModal extends Component{
             time,
             this.state.time_buffer 
         )
+
+        this.props.onclick()
+
     }
 
     handleChange(event){
