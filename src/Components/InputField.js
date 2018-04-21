@@ -1,10 +1,11 @@
 import React from 'react';
+import '../styles/InputField.css';
 
 const InputField = (props) => {
     return(
       <div>
           <div float> {props.description} </div>
-          <input placeholder = {props.placeholder} class="form-control" type={props.type}/>
+          <input className="input" placeholder = {props.placeholder}  type={props.type}/>
       </div>
     );
   };

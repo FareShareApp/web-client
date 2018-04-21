@@ -1,4 +1,4 @@
-body {
+/*body {
   background: white;
   display:  flex;
   justify-content: center;
@@ -13,14 +13,12 @@ body {
 
 .loginContainer{
   color: white;
-
+  width: 50vw;
   display: block;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-
-  
-
-
+  margin-left: 50vw;
   height: 100vh;
   padding-top: 10vh;
 }
+*/

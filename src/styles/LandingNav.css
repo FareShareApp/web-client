@@ -1,14 +1,15 @@
-﻿.navbar {
+﻿.navbar-top {
 	border: none;
 	background-color: inherit;
+	width: 50%;
 }
 
 .navbar-text {
 	text-decoration: none !important;
 	color: white !important;
-
-}
-.header {
-	font-weight: bold;
+	max-width: 50vw;
 }
 
+.container {
+	max-width: 50vw !important;
+}

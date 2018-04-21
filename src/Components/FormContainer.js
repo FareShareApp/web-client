@@ -8,10 +8,10 @@ const FormContainer = (props) => {
     const {history} = props;
     return(
         <div className = "background-rect" >
-
+            <h1>Log In</h1>
             <div className = "inputs">
-                <InputField description = {"Username"} placeholder = {""} type={"text"}/>
-                <InputField description = {"Password"} placeholder = {""} type={"password"}/>
+                <InputField  className= "input-login" description = {""} placeholder = {"Northwestern Email"} type={"text"}/>
+                <InputField  className= "input-login" description = {""} placeholder = {"Password"} type={"password"}/>
             </div>
 
             <div><Button className = "form-button" onClick = {() => history.push('/main') } > Sign In </Button></div>
