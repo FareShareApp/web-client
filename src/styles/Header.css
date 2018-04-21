@@ -1,8 +1,18 @@
 /*This is the styling for the header component of the main page*/
 
+.headerInfoContainer{
+    padding: 15px;
+    text-align: left;
 
+    font-size: 3vh;
+
+    width: 35%;
+}
 
 .headerContainer{
+    display: flex;
+
+
     text-align: center;
     font-size: 10vh;
 

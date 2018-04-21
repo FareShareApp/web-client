@@ -12,6 +12,11 @@ body {
 
 
 .loginContainer{
+  position: absolute;
+
+  top: 10vh;
+  left: 68vw;
+
   color: white;
 
   display: block;
@@ -21,6 +26,6 @@ body {
   
 
 
-  height: 100vh;
+  height: 90vh;
   padding-top: 10vh;
 }

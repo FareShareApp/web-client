@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import LandingNav from '../Components/LandingNav'
 import '../styles/Landing.css';
 import { Navbar, Nav, NavItem, Jumbotron } from 'react-bootstrap';
+import Login from "./Login";
 
 
 
@@ -16,6 +17,8 @@ class Landing extends Component{
 				<h1>Riding, <br /> simplified.</h1>
 				<p className="landing-text">Share Uber fares to airpots with Northwestern Students, fairly.</p>
 			</Jumbotron>
+			<Login {...this.props} />
+
 		</div>
 		);
 	}

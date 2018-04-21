@@ -32,6 +32,7 @@ class Main extends Component{
 		super();
         this.state = { isLoading: true ,
 
+            Username: "",
             modalIsOpen: false
         
         }
@@ -55,6 +56,10 @@ class Main extends Component{
 	}
 
     render(){
+        const {location} = this.props;
+
+        console.log(location.state.Username);
+
         return (
 
         this.state.isLoading 
@@ -73,7 +78,7 @@ class Main extends Component{
                 <RequestModal onclick = {this.closeModal}/>
             </Modal>
 
-            <Header {...this.props}/>
+            <Header userEmail = {location.state.Username} {...this.props}/>
             <ListContainer />
 
             <AddButton onclick = {this.openModal}/>
