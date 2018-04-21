@@ -2,44 +2,57 @@
 import React, {Component} from 'react';
 import Request from './Request'
 import '../styles/UserMatch.css';
-import Header from "../Components/Header";
+import AddButton from './AddButton';
+
+
+
+
+
 
 
 
 class RequestList extends Component{
 
-    changeSelectedColor(selected, index){
-        if(selected === index){ //this request is selected
-            return "selectedRC";
-        }
-        else{
-            return "requestContainer";
-        }
+    state = {
+        products: [],
     }
 
-    renderRequests(){ //Renders json data       
 
-        const renderedRequestList = this.props.requestData.map((currentReq, index) => 
-            <div> 
-                <Request onclick = {() => this.props.onclick(index)}
-                        theme = {this.changeSelectedColor(this.props.selected, index)}
-                        destination = { currentReq.destination } 
-                        desiredTime = { currentReq.desiredTime }
-                        timeBuffer = { currentReq.timeBuffer }/> 
-            </div>
-        )
+    componentDidMount(){
+        this.getRequests(); //Fetch data from the sql server
+    };
 
-        return renderedRequestList;
+
+
+    renderRequests(data, onclick){ //Renders json data
+
+       const dataset = data.map( (option, ind) => 
+        
+        <div> <Request onclick = {() => onclick(option.id)} user_id = {option.id} destination = {option.destination} index = {ind}/> </div>)
+
+
+        return dataset;
     }
+
+    getRequests = _ => { //Fetch json from server
+        fetch('http://localhost:4000').then(response => response.json())
+        .then(response => this.setState({products: response}))
+        .catch(err => console.error(err));
+    } 
 
     
     render(){
-        const {history, userName} = this.props;
+        const {data, onclick} = this.props;
+
         return(
             <div className = "userContainer">
-                <Header userName = {userName}/>
-                {this.renderRequests()}
+    
+                {this.renderRequests(data, onclick)}
+
+                <AddButton/>
+               
             </div>
+    
         )
 
     }
