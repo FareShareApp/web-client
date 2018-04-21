@@ -1,67 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import InputField from './InputField';
 import '../styles/FormContainer.css';
 import { Button } from 'react-bootstrap';
 
 
-
-class FormContainer extends Component {
-    constructor(props) {
-        super(props); //access props
-
-        this.state = {
-            Username: '',
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-    }
-
-    handleInputChange(event) {
-
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-
-        console.log(this.state.Username)
-
-    }
-
-
-    render(){
-        const {history} =  this.props;
-        return(
-            <div className = "background-rect" >
-                <h1>Log In</h1>
-                <div className = "inputs">
-                    <InputField
-                        className= "input-login"
-                        Name = {"Username"}
-                        Value={this.state.Username}
-                        onchange={this.handleInputChange}
-                        description = {""}
-                        placeholder = {"Northwestern Email"} 
-                        type={"text"}
-                    />
-                    <InputField
-                         className= "input-login"
-                         description = {""}
-                         placeholder = {"Password"}
-                         type={"password"}/>
-                </div>
-
-                <div>
-                    <Button 
-                        className = "form-button" 
-                        onClick = {() => history.push({pathname: '/main',
-                                                       state: {Username: this.state.Username}} )} >
-                         Sign In 
-                    </Button>
-                </div>
-                
-                <div><Button className = "form-button" bsStyle = "primary"> Create account </Button></div>
+const FormContainer = (props) => {
+    const {history} = props;
+    return(
+        <div className = "background-rect" >
+            <h1>Log In</h1>
+            <div className = "inputs">
+                <InputField  className= "input-login" description = {""} placeholder = {"Northwestern Email"} type={"text"}/>
+                <InputField  className= "input-login" description = {""} placeholder = {"Password"} type={"password"}/>
             </div>
-        );
-    }
+
+            <div><Button className = "form-button" onClick = {() => history.push('/main') } > Sign In </Button></div>
+            <div><Button className = "form-button" bsStyle = "primary"> Create account </Button></div>
+        </div>
+    );
 };
 
 

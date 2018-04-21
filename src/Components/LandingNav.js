@@ -11,7 +11,6 @@ class LandingNav extends Component {
 	render() {
 		const {history} = this.props;
 		return (
-
 				<Navbar className="navbar-top">
 							<h2><span className="navbar-text">FareShare</span></h2>
 				</Navbar>
