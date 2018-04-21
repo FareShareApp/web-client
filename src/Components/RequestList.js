@@ -2,57 +2,44 @@
 import React, {Component} from 'react';
 import Request from './Request'
 import '../styles/UserMatch.css';
-import AddButton from './AddButton';
-
-
-
-
-
+import Header from "../Components/Header";
 
 
 
 class RequestList extends Component{
 
-    state = {
-        products: [],
+    changeSelectedColor(selected, index){
+        if(selected === index){ //this request is selected
+            return "selectedRC";
+        }
+        else{
+            return "requestContainer";
+        }
     }
 
+    renderRequests(){ //Renders json data       
 
-    componentDidMount(){
-        this.getRequests(); //Fetch data from the sql server
-    };
+        const renderedRequestList = this.props.requestData.map((currentReq, index) => 
+            <div> 
+                <Request onclick = {() => this.props.onclick(index)}
+                        theme = {this.changeSelectedColor(this.props.selected, index)}
+                        destination = { currentReq.destination } 
+                        desiredTime = { currentReq.desiredTime }
+                        timeBuffer = { currentReq.timeBuffer }/> 
+            </div>
+        )
 
-
-
-    renderRequests(data, onclick){ //Renders json data
-
-       const dataset = data.map( (option, ind) => 
-        
-        <div> <Request onclick = {() => onclick(option.id)} user_id = {option.id} destination = {option.destination} index = {ind}/> </div>)
-
-
-        return dataset;
+        return renderedRequestList;
     }
-
-    getRequests = _ => { //Fetch json from server
-        fetch('http://localhost:4000').then(response => response.json())
-        .then(response => this.setState({products: response}))
-        .catch(err => console.error(err));
-    } 
 
     
     render(){
-        const {data, onclick} = this.props;
-
+        const {history, userName} = this.props;
         return(
             <div className = "userContainer">
-    
-                {this.renderRequests(data, onclick)}
-
-                <AddButton/>
-               
+                <Header userName = {userName}/>
+                {this.renderRequests()}
             </div>
-    
         )
 
     }
