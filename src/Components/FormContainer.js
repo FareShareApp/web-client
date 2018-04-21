@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 
 class FormContainer extends Component {
     constructor(props) {
-        super(props);
+        super(props); //access props
 
         this.state = {
             Username: '',
@@ -40,7 +40,10 @@ class FormContainer extends Component {
                         placeholder = {"ex) user@gmail.com"} 
                         type={"text"}
                     />
-                    <InputField description = {"Password"} placeholder = {""} type={"password"}/>
+                    <InputField
+                         description = {"Password"}
+                         placeholder = {""}
+                         type={"password"}/>
                 </div>
 
                 <div>

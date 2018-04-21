@@ -5,13 +5,13 @@ html *
 
 .infoContainer{
     display: flex;
-    background: black;
+
 
 }
 
 .testing{
     width: 50vw;
-    background: #F2FDFF;
+    background: rgba(0,0,0,.5);
 }
 
 .addButton{

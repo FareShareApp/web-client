@@ -16,14 +16,6 @@ class LandingNav extends Component {
 							<h2><a className="navbar-text header">FareShare</a></h2>
 					</Navbar.Header>
 
-					<Nav pullRight >
-						<NavItem onClick = {() => history.push('/login')}>
-							<h4 className="navbar-text">Log In</h4>
-						</NavItem>
-						<NavItem>
-							<h4 className="navbar-text">Sign Up</h4>
-						</NavItem>
-					</Nav>
 				</Navbar>
 			)
 	}

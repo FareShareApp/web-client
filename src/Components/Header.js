@@ -20,7 +20,7 @@ class Header extends Component{
                 <div> 
                     FareShare
                     <h5  onClick = {() => history.push('/')}>
-                        Log Out
+                        Log Out  |  Edit
                     </h5>
                 </div>
             </div>

@@ -6,17 +6,17 @@
 
     font-size: 3vh;
 
-    width: 35%;
+    width: 38%;
 }
 
 .headerContainer{
     display: flex;
-
+    color: white;
 
     text-align: center;
     font-size: 10vh;
 
     width: 100vw;
     height: 20vh;
-    background: #9AD4D6;
+    background: rgba(0,0,0,.5);
 }
