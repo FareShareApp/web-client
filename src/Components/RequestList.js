@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import Request from './Request'
 import '../styles/UserMatch.css';
+import Header from "../Components/Header";
 
 
 
@@ -33,9 +34,10 @@ class RequestList extends Component{
 
     
     render(){
-
+        const {history, userName} = this.props;
         return(
             <div className = "userContainer">
+                <Header userName = {userName}/>
                 {this.renderRequests()}
             </div>
         )

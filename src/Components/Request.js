@@ -58,11 +58,15 @@ class Request extends Component{
                     
                     <div className="requestInformation">
                         <div className = "destinationTitle">{ destination }</div>
-                        <div>{ formattedDate.toLocaleDateString() }</div>
-                        
-                        <div>
-                            { this.timeConverse(lowerDateBound) + " - " } 
-                            {  this.timeConverse(upperDateBound) } </div>               
+
+                        <div className = "requestTimeContainer">
+                            <div>{ formattedDate.toLocaleDateString() }</div>
+                            
+                            <div>
+                                { this.timeConverse(lowerDateBound) + " - " } 
+                                {  this.timeConverse(upperDateBound) } 
+                            </div>  
+                        </div>             
                     </div>
 
 

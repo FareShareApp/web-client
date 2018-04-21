@@ -19,7 +19,7 @@ class Request extends Component{
         const {onclick, first, last, email, pic} = this.props
 
         return(
-            <div className = "requestContainer" 
+            <div className = "matchContainer" 
                 onClick = {onclick} >
 
                 <div className = "avatarContainer">

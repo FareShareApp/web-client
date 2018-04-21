@@ -85,8 +85,7 @@ class Main extends Component{
                 <RequestModal onclick = {this.closeModal} userID = {this.state.userID}/>
             </Modal>
 
-            <Header userEmail = {this.state.DisplayName} {...this.props}/>
-            <ListContainer change = {this.changeUserName} userEmail = {location.state.Username} />
+            <ListContainer userName = {this.state.DisplayName} change = {this.changeUserName} userEmail = {location.state.Username}  {...this.props} />
 
             <AddButton onclick = {this.openModal}/>
         </div>

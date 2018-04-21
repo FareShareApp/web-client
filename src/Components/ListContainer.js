@@ -12,7 +12,8 @@ class ListContainer extends Component{
         requestID: 1,
         requestData: [],
         matchData: [],
-        selectedRequest: -1,        
+        selectedRequest: -1,  
+        selectedRequestData: null,      
         first: "",
         last: "",
         userId: "",
@@ -22,6 +23,7 @@ class ListContainer extends Component{
     handleClick(index){
         this.setState({requestID: index});
         this.setState({selectedRequest: index});
+        this.setState({selectedRequestData: this.state.requestData[index]})
                 
         let selectedRequestId = this.state.requestData[index]._id;
         //console.log("MATCHES FOR RIDE ID:" + selectedRequestId);
@@ -65,8 +67,11 @@ class ListContainer extends Component{
                 <RequestList requestData = { this.state.requestData } 
                              onclick = { this.handleClick.bind(this) } 
                              selected = {this.state.selectedRequest}
+                             userName = {this.props.userName}
                              />
-                <MatchList matchData = { this.state.matchData } />
+                <MatchList 
+                    selectedRequest = {this.state.selectedRequestData}
+                    matchData = { this.state.matchData } />
             </div>
         )
     }

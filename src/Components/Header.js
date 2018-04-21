@@ -8,26 +8,17 @@ class Header extends Component{
     
 
     render(){
-        const {history, userEmail} = this.props;
+        const {history, userName} = this.props;
         return(
 
             <div className = "headerContainer">
                 
                 <div className = "headerInfoContainer">
                     <div>
-                        {"Welcome, " + userEmail + "!"}
+                        {"Welcome, " + userName + "!"}
                     </div>
                 </div>
 
-                <div className = "headerTitle">
-                    FareShare
-                </div>
-
-                <div className = "headerButtons">   
-                    <h5  onClick = {() => history.push('/')}>
-                        Log Out  |  Edit
-                    </h5>
-                </div>
             </div>
         )
     }
