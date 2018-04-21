@@ -10,13 +10,15 @@ html *
 }
 
 .testing{
+
+    height: 90vh;
     width: 50vw;
     background: rgba(0,0,0,.5);
 }
 
 .addButton{
     position: absolute;
-    background: skyblue;
+    background: rgb(110, 174, 199);
     text-align: center;
 
     height: 100px;

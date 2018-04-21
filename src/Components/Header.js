@@ -19,8 +19,11 @@ class Header extends Component{
                     </div>
                 </div>
 
-                <div> 
+                <div className = "headerTitle">
                     FareShare
+                </div>
+
+                <div className = "headerButtons">   
                     <h5  onClick = {() => history.push('/')}>
                         Log Out  |  Edit
                     </h5>

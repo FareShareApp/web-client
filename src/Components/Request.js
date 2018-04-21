@@ -5,6 +5,7 @@ import changeInfo from './MatchList';
 
 //External libraries
 import format from 'date-format';
+import '../styles/Request.css'
 
 class Request extends Component{
 
@@ -56,8 +57,9 @@ class Request extends Component{
                     onClick = { onclick }>
                     
                     <div className="requestInformation">
+                        <div className = "destinationTitle">{ destination }</div>
                         <div>{ formattedDate.toLocaleDateString() }</div>
-                        <div>{ destination }</div>
+                        
                         <div>
                             { this.timeConverse(lowerDateBound) + " - " } 
                             {  this.timeConverse(upperDateBound) } </div>               

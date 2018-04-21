@@ -1,22 +1,40 @@
 /*This is the styling for the header component of the main page*/
 
 .headerInfoContainer{
-    padding: 15px;
+
+    padding: 10px;
+
     text-align: left;
 
     font-size: 3vh;
 
-    width: 38%;
+    width: 15%;
 }
 
 .headerContainer{
     display: flex;
+    justify-content: space-between;
+
     color: white;
 
     text-align: center;
     font-size: 10vh;
 
     width: 100vw;
-    height: 20vh;
-    background: rgba(0,0,0,.5);
+    height: 10vh;
+    background: #1f1f1f;
+}
+
+.headerTitle{
+    width: 15%;
+    font-size: 3vw;
+}
+
+.headerButtons{
+    text-align: right;
+    width: 15%;
+    padding: 10px;
+    height: 100%;
+
+
 }

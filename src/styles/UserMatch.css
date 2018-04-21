@@ -4,10 +4,11 @@
     background: rgba(0,0,0,.5);
 
     width: 50vw;
-    height: 80vh;
+    height: 90vh;
 }
 
 .requestContainer{
+
     padding-left: 5%;
     display: flex;
 
@@ -26,9 +27,11 @@
     padding-left: 5%;
     display: flex;
 
+
     height: 100px;
-    background: gray;
-    color: white;
+    background: rgb(226, 226, 226);
+    color: black;
+    transform: scale(1.02);
 
     border-radius: 5px;
     box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.3);
@@ -40,11 +43,12 @@
 .requestContainer:checked{
     background-color: red;
 }
+
 .requestContainer:hover{
 	color: black;
     border-left: 7px solid black;
     outline: 2px;
-    transform: scale(1.01);
+    transform: scale(1.02);
     text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
 
 }

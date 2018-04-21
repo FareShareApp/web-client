@@ -85,7 +85,7 @@ class RequestModal extends Component{
         )
 
         this.props.onclick()
-
+        window.location.reload();
     }
 
     handleChange(event){
