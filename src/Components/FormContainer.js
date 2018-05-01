@@ -40,12 +40,15 @@ class FormContainer extends Component {
                         description = {"Username"}
                         placeholder = {"ex) user@gmail.com"} 
                         type={"text"}
+                        className = {"input"}
                     />
                     <InputField
-                         class= "input-login"
+                         className= "input"
                          description = {"Password"}
                          placeholder = {""}
-                         type={"password"}/>
+                         type={"password"}
+                         
+                         />
                 </div>
 
                 <div>

@@ -125,7 +125,9 @@ class RequestModal extends Component{
                                 Value = {this.state.time_buffer}
                                 description = {"How long can you wait? (Minutes)"} 
                                 placeholder = {"ex) 30"} 
-                                type={"text"}/>
+                                type={"text"}
+                                className = {"form-control"}
+                                />
                     </div>
 
                     

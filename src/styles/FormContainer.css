@@ -4,11 +4,10 @@
     width: 30vw;
     height: 100%;
     
- 
 
 
     display: table-cell;
-    vertical-align:  middle;
+
     padding: 30px;
 }
 
@@ -28,4 +27,14 @@
     margin-bottom: 30px;
     text-align: left;
     text-decoration-color: black;
+}
+
+
+@media screen and (max-width: 1224px){
+    .background-rect{
+        background: wheat;
+        
+        width: 50vw;
+        height: 50vw;
+    }
 }

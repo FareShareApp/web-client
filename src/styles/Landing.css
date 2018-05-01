@@ -19,23 +19,32 @@ html {
 	margin-left: none;
 }
 
-
-
-.landing-text {
-
-	color: white;
-	font-size: 30px;
-	font-weight: 100;
-	width: 100%;
+.LandingMain{
+	height: 100vh;
 }
 
-.landing-jumbo {
-	
+/* Mobile Login Container */
 
+.mobile-login-landing{
+	height:  50vh;
+
+}
+
+/*******************/
+
+.landing-jumbo {
+	margin-bottom: 0;
+	height: 50vh;
 	padding-left: 5vw;
+	padding-top:  10vh;
 	width: 70vw;
-	padding-top: 60vh;
+
 	background-color: inherit;
 	color: white;
 }
 
+@media screen and (max-width: 1224px) {
+	.landing-jumbo{
+		width:  100vw;
+	}
+}

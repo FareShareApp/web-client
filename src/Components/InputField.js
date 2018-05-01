@@ -12,7 +12,7 @@ const InputField = (props) => {
                   placeholder = {props.placeholder}
                   type={props.type}
                    //className ="form-control" type={props.type}
-                   className ="input"
+                   className = {props.className}
                    />
       </div>
     );
