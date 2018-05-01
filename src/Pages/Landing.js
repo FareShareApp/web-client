@@ -12,11 +12,11 @@ class Landing extends Component{
 	render(){
 	return (
 		<div className="landing">
-			<LandingNav {...this.props}/>
 			<Jumbotron className="landing-jumbo">
 				<h1>Riding, <br /> simplified.</h1>
 				<p className="landing-text">Share Uber fares to airports with Northwestern Students, fairly.</p>
 			</Jumbotron>
+
 			<Login {...this.props} />
 
 		</div>

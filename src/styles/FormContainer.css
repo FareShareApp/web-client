@@ -1,15 +1,10 @@
 
 .background-rect {
-
     text-align: center;
-    width: 380px;
-    height: 300px;
+    width: 30vw;
+    height: 100%;
     
  
-
-    border-radius: 10px;
-    border: 2px solid  #f4f4f4;
-
 
 
     display: table-cell;
@@ -17,11 +12,20 @@
     padding: 30px;
 }
 
-.inputs{
-    margin-bottom: 30px;
-}
 
 .form-button{
     margin-top: 10px;
     width: 100%;
+}
+
+.input-login {
+    width: 100%;
+}
+
+
+
+.inputs{
+    margin-bottom: 30px;
+    text-align: left;
+    text-decoration-color: black;
 }

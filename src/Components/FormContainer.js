@@ -4,6 +4,7 @@ import '../styles/FormContainer.css';
 import { Button } from 'react-bootstrap';
 
 
+
 class FormContainer extends Component {
     constructor(props) {
         super(props); //access props
@@ -41,6 +42,7 @@ class FormContainer extends Component {
                         type={"text"}
                     />
                     <InputField
+                         class= "input-login"
                          description = {"Password"}
                          placeholder = {""}
                          type={"password"}/>
