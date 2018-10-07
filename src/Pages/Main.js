@@ -1,100 +1,144 @@
-import React, {Component} from 'react';
-import Header from "../Components/Header";
-import ListContainer from "../Components/ListContainer";
+import React, { Component } from 'react';
 import '../styles/Main.css';
-import Loader from '../Components/Loader';
-import AddButton from '../Components/AddButton';
-import Modal from 'react-modal';
-import RequestModal from '../Components/RequestModal';
+import { gql } from 'apollo-boost';
+import { graphql, compose } from 'react-apollo';
+import { getUsersQuery, addRequest, getRequests } from '../queries/queries';
+import UserProfile from '../Components/UserProfile';
 
+//     mutation {
+//         addRequest(destination: "O'Hare", timeBuffer: 1111) {
+//           destination
+//           timeBuffer
+//         }
+//       }
+// }`
 
+const Requests = getRequests =>
+  getRequests.data.loading ? (
+    <div>loading</div>
+  ) : (
+    getRequests.data.requests.map(request => <li key={request.id}>{request.destination}</li>)
+  );
 
-const customStyles = {
-    content : {
-      width : '30%',
-      height: '50%',
+class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      destination: '',
+      timeBuffer: '',
+      time: '',
+    };
+  }
 
-      backgroundColor: 'rgba(255,255,255,1)',
+  handleChange(e) {
+    console.log(e.target.name);
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
-      overflow: "visible",
-      top                   : '40%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
-    }
-  };
+  handleSubmit(e) {
+    const { addRequest, getRequests } = this.props;
+    const { destination, timeBuffer } = this.state;
+    e.preventDefault();
+    console.log(addRequest);
+    addRequest({
+      variables: {
+        destination,
+        timeBuffer,
+      },
+    }).then(getRequests.refetch());
+  }
 
-class Main extends Component{
+  render() {
+    const { getRequests } = this.props;
+    const { destination, time } = this.state;
+    return (
+      <div className="main-body">
+        <UserProfile />
 
-	constructor(props) 
-	{
-		super();
-        this.state = { isLoading: true ,
+        {/* SELECT Destination */}
+        <form className="main-request-ride">
+          <select
+            className="main-request-ride-input"
+            defaultValue="Select a Destination"
+            name="destination"
+            onChange={this.handleChange}
+          >
+            <option value="ohare">O'Hare</option>
+            <option value="midway">Midway</option>
+          </select>
+          {/* SELECT time, type="time" converts to military time thing */}
+          <input
+            className="main-request-ride-input"
+            type="time"
+            name="time"
+            value={time}
+            onChange={this.handleChange}
+          />
+        </form>
+        {/* <div className="time-inputs">
+          <input
+            type="number"
+            min="1"
+            max="9"
+            value={digits[0]}
+            name={0}
+            onChange={this.handleTimeChange}
+          />
+          <input
+            type="number"
+            min="0"
+            max="9"
+            value={digits[1]}
+            name={1}
+            onChange={this.handleTimeChange}
+          />
+          <input
+            type="number"
+            min="0"
+            max="9"
+            value={digits[2]}
+            name={2}
+            onChange={this.handleTimeChange}
+          />
+          <select>
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+        </div> */}
 
-            modalIsOpen: false,
-            DisplayName: "",
-            userID: "",
-        
-        }
+        {/* SELECT time Buffer */}
+        {/* <select name="timeBuffer" onChange={this.handleChange}>
+          <option value=></option>
+        </select> */}
 
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
-        this.changeUserName = this.changeUserName.bind(this);
-    }
-    
-    openModal() {
-        this.setState({modalIsOpen: true});
-    }
-    
-    closeModal() {
-        this.setState({modalIsOpen: false});
-    }
+        {/*
+        <input
+          value={timeBuffer}
+          name="timeBuffer"
+          onChange={this.handleChange}
+          placeholder="How long are you willing to wait?"
+          description="Time Buffer"
+          type="text"
+        />
+        <button type="submit" onClick={this.handleSubmit}>
+          {' '}
+          Submit!{' '}
+        </button>
 
-    
-	componentDidMount() 
-	{
-        this.setState({isLoading: false})
-    }
-    
-    changeUserName(name, userID){
-        this.setState({DisplayName: name});
-        this.setState({userID: userID});
-    }
-
-    render(){
-        const {location} = this.props;
-
-
-        return (
-
-        this.state.isLoading 
-    	? 	
-    	<Loader className='loader'/> 
-    	: 
-        <div>
-
-            <Modal
-                isOpen={this.state.modalIsOpen}
-                onRequestClose={this.closeModal}
-                style={customStyles}
-                contentLabel="Request Modal"
-                overlayClassName= "Overlay"
-            >
-                <RequestModal onclick = {this.closeModal} userID = {this.state.userID}/>
-            </Modal>
-
-            <ListContainer userName = {this.state.DisplayName} 
-                change = {this.changeUserName}
-                 userEmail = {location.state.Username}
-                   {...this.props} />
-
-            <AddButton onclick = {this.openModal}/>
-        </div>
-        );
-
-    }
+        <ul>
+          <Requests data={getRequests} />
+        </ul> */}
+      </div>
+    );
+  }
 }
 
-export default Main;
+export default compose(
+  graphql(getUsersQuery, { name: 'getUsersQuery' }),
+  graphql(addRequest, { name: 'addRequest' }),
+  graphql(getRequests, { name: 'getRequests' })
+)(Main);
+
+// export default Main;

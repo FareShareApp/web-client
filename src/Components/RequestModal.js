@@ -94,6 +94,8 @@ class RequestModal extends Component{
             [event.target.name]: [event.target.value]
         })
 
+        fetch('/requests')
+
     }
 
     dateChange(value){

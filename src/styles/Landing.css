@@ -1,18 +1,23 @@
-html {
-	width: 100vw;
-	height: 100vh;
-    margin: 0;
-	background-image: url("https://images.unsplash.com/uploads/1413259835094dcdeb9d3/6e609595?ixlib=rb-0.3.5&s=6e10b98782f25fb337a3c1cb2e88a7c7&auto=format&fit=crop&w=2704&q=80");
-   	background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 
 .landing{
 	height: 100vh;
 	width: 100vw;
-	display: flex;
 
+	/* filter: blur() */
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-end
+}
+
+.landing-image {
+	height: 100vh;
+	width: 100vw;
+	background-size: cover;
+	filter: brightness(85%);
+	background-image: url('./gaby-yu-596529-unsplash.jpg');
+	background-repeat: none;
+	background-position-y: 50%;
 }
 
 .container {
@@ -23,10 +28,27 @@ html {
 	height: 100vh;
 }
 
+.login-container {
+	display: flex;
+    width: 30vw;
+	justify-content: center;
+    background-color: white;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 /* Mobile Login Container */
 
-.mobile-login-landing{
-	height:  50vh;
+@media only screen and (max-width: 800px) {
+	.login-container {
+		z-index: -1;
+		width: 100vw;
+	}
+	.landing-image{
+		display: none;
+	}
 
 }
 
@@ -41,10 +63,4 @@ html {
 
 	background-color: inherit;
 	color: white;
-}
-
-@media screen and (max-width: 1224px) {
-	.landing-jumbo{
-		width:  100vw;
-	}
 }
